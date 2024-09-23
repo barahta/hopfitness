@@ -1,0 +1,307 @@
+@media screen and (min-width: 900px){
+  .main{
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+
+    .omedia{
+      width: 1140px;
+      height: 350px;
+      background-image: url("./logomain.svg");
+      background-size: cover;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      z-index: 1;
+    }
+    .omediawater{
+      width: 2380px;
+      height: 473px;
+      background-image: url("./logowater.svg");
+      background-size: 100% 100%;
+      position: absolute;
+      bottom: 40%;
+      left: 50%;
+    }
+    .container{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #FFFFFF;
+      z-index: 2;
+      .content{
+        width: 100%;
+        max-width: 1920px;
+        height: 100%;
+        z-index: 2;
+        .uppermobile {
+          display: none;
+        }
+        .upper{
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          width: calc(100% - 2px);
+          margin-left: 2px;
+          color: #FFF;
+          .column{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: calc(100% / 4);
+            margin-top: 40px;
+            transition: 0.2s ease-in-out;
+            .point{
+              padding: 30px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              border: none;
+              width: calc(100% - 60px);
+              height: 30px;
+              cursor: pointer;
+              transition: 0.2s ease-in-out;
+              color: #FFF;
+              .next{
+                display: none;
+                width: 80px;
+                height: 104px;
+                background-image: url("../images/nextwhite.svg");
+                background-size: 98%;
+                background-repeat: no-repeat;
+                transition: 0.2s ease-in-out;
+                background-position: center center;
+                margin: 0 30px 0 0 ;
+              }
+              .text{
+                width: 100%;
+                font-size: 20px;
+                display: flex;
+                justify-content: flex-start;
+                transition: 0.2s ease-in-out;
+                color: #FFF;
+              }
+            }
+
+            .point:hover{
+              border: 1px solid #FFFFFF;
+              transition: 0.2s ease-in-out;
+              height: 150px;
+              .next{
+                display: flex;
+                transition: 0.2s ease-in-out;
+              }
+              .text{
+                justify-content: flex-end;
+                transition: 0.2s ease-in-out;
+              }
+            }
+          }
+
+        }
+
+      }
+      .contacts{
+        width: calc(100% - 30px);
+        height: calc(50% - 30px);
+        padding: 0 30px 30px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        .data{
+          margin-right: 20px;
+          margin-bottom: 20px;
+        }
+        .sociality{
+          margin-bottom: 20px;
+          img{
+            height: 50px;
+            margin-left: 20px;
+          }
+        }
+        .autor{
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          .copyright{
+            width: 34px;
+            height: 34px;
+            background-image: url("../images/copyright.svg");
+            background-size: cover;
+          }
+          .description{
+            .text{
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px){
+  .main{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    //padding-top: 20px;
+
+    .omedia{
+      width: 300px;
+      height: 92px;
+      background-image: url("./logomain.svg");
+      background-size: cover;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      z-index: 1;
+      display: none;
+    }
+    .omediawater{
+      width: 2380px;
+      height: 473px;
+      background-image: url("./logowater.svg");
+      background-size: 100% 100%;
+      position: absolute;
+      bottom: 40%;
+      left: 50%;
+    }
+    .container{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #FFFFFF;
+      z-index: 2;
+      .content{
+        width: 100%;
+        max-width: 1920px;
+        height: 100%;
+        z-index: 2;
+        .upper {
+          display: none;
+        }
+        .uppermobile{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+          width: calc(100% - 0px);
+          margin-left: 0px;
+          color: #FFF;
+
+            .point{
+              padding: 30px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              //border: none;
+              width: calc(50% - 62px);
+              //height: 30px;
+              cursor: pointer;
+              transition: 0.2s ease-in-out;
+              border: 1px solid #FFFFFF;
+              height: 150px;
+              color: #FFF;
+              .next{
+                //display: none;
+                width: 40px;
+                height: 52px;
+                background-image: url("../images/nextwhite.svg");
+                background-size: 98%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                margin: 0 30px 0 0 ;
+                display: flex;
+                transition: 0.2s ease-in-out;
+              }
+              .text{
+                width: 100%;
+                font-size: 20px;
+                display: flex;
+                //justify-content: flex-start;
+                transition: 0.2s ease-in-out;
+                justify-content: flex-end;
+                //transition: 0.2s ease-in-out;
+                color: #FFF;
+              }
+            }
+
+            .point:hover{
+              border: 1px solid #FFFFFF;
+              transition: 0.2s ease-in-out;
+              height: 150px;
+              .next{
+                display: flex;
+                transition: 0.2s ease-in-out;
+              }
+              .text{
+                justify-content: flex-end;
+                transition: 0.2s ease-in-out;
+              }
+            }
+
+
+        }
+
+      }
+      .contacts{
+        width: calc(100% - 30px);
+        height: calc(50% - 30px);
+        padding: 0 30px 30px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 50px;
+        .data{
+          margin-right: 20px;
+          margin-bottom: 20px;
+        }
+        .sociality{
+          margin-bottom: 20px;
+          img{
+            height: 50px;
+            margin-left: 20px;
+          }
+        }
+        .autor{
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          .copyright{
+            width: 34px;
+            height: 34px;
+            background-image: url("../images/copyright.svg");
+            background-size: cover;
+          }
+          .description{
+            .text{
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+

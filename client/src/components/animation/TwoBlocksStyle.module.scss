@@ -1,0 +1,81 @@
+//@media screen and (max-width: 3000px){
+  .main{
+    width: 100%;
+    height: 250px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    //margin-bottom: 500px;
+    z-index: -2;
+    .flyleft{
+      width: 50%;
+      height: 250px;
+      background-image: url("./images/flyleft.png");
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-right: -10%;
+      margin-top: -50px;
+      rotate: -1deg;
+      animation: flyleftAnimation 4s ease-in-out infinite;
+    }
+    .flyright{
+      width: 50%;
+      height: 250px;
+      background-image: url("./images/flyright.png");
+      background-size: 100% 100%;
+      margin-left: -10%;
+      margin-top: -50px;
+rotate: 3deg;
+      animation: flyrightAnimation 4s ease-in-out infinite;
+    }
+    @keyframes flyleftAnimation {
+      0%, 100% {
+        transform: translateX(0) translateY(0) rotate(-1deg);
+      }
+      50% {
+        transform: translateX(-10px) translateY(-15px) rotate(-3deg);
+      }
+    }
+
+    @keyframes flyrightAnimation {
+      0%, 100% {
+        transform: translateX(0) translateY(0) rotate(2deg);
+      }
+      50% {
+        transform: translateX(10px) translateY(10px) rotate(3deg);
+      }
+    }
+  }
+//}
+
+//@media screen and (min-width: 1921px){
+//  .main{
+//    width: 100%;
+//    height: 250px;
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//    margin-top: -150px;
+//    margin-bottom: 500px;
+//    z-index: -2;
+//    .flyleft{
+//      width: 50%;
+//      height: 100%;
+//      background-image: url("./images/flyleft.svg");
+//      background-size: 100% 100%;
+//      background-position: center;
+//      background-repeat: no-repeat;
+//      margin-right: -10%;
+//    }
+//    .flyright{
+//      width: 50%;
+//      height: 100%;
+//      background-image: url("./images/flyright.svg");
+//      background-size: 100% 100%;
+//      margin-left: -10%;
+//
+//    }
+//  }
+//}

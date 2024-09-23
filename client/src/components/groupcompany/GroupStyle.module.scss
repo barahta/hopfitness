@@ -1,0 +1,198 @@
+.main{
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    .title{
+      width: calc(100% - 50px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: #454545;
+      //font-family: 'ALS', sans-serif;
+      font-size: 40pt;
+      font-weight: 600;
+      //margin-left: 100px;
+      text-transform: uppercase;
+      margin-left: 50px;
+    }
+    .companies{
+      width: 100%;
+      min-height: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      .one{
+        width: 290px;
+        height: 405px;
+        margin: 0 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.2s;
+        .active{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: -32px;
+          z-index: 0;
+          opacity: 0;
+          .sphereone{
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: -300px;
+            div{
+              width: 280px;
+              height: 280px;
+              border: 10px solid #ECE9F3;
+              border-radius: 150px;
+            }
+          }
+          .spheretwo{
+
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: -300px;
+
+            div{
+              width: 250px;
+              height: 250px;
+              border: 5px solid #C7BEDA;
+              border-radius: 150px;
+            }
+          }
+          .spherethree{
+
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: -300px;
+            div{
+              width: 220px;
+              height: 220px;
+              border: 2px solid #A192C1;
+              border-radius: 150px;
+            }
+          }
+        }
+        .comimg{
+          width: 290px;
+          height: 405px;
+          background-size: cover;
+          background-position: center center;
+          z-index: 1;
+        }
+      }
+      .one:hover{
+
+        transition: 0.2s;
+        .active {
+          opacity: 1;
+          transition: 0.2s;
+          .sphereone{
+            div{
+              animation: radius-one 1.5s ease-in-out infinite;
+              transition: 0.2s;
+            }
+            @keyframes radius-one {
+              0% {
+                opacity: 0;
+                transition: 0.2s;
+              }
+              70% {
+                opacity: 1;
+                transition: 0.2s;
+              }
+              100% {
+                opacity: 0;
+                transition: 0.2s;
+              }
+            }
+          }
+          .spheretwo{
+
+            div{
+              animation: radius-two 1.5s ease-in-out infinite;
+              transition: 0.2s;
+            }
+            @keyframes radius-two {
+              0% {
+                opacity: 0;
+                transition: 0.2s;
+              }
+              50% {
+                opacity: 1;
+                transition: 0.2s;
+              }
+              100% {
+                opacity: 0;
+                transition: 0.2s;
+              }
+            }
+          }
+          .spherethree{
+
+            div{
+              animation: radius-three 1.5s ease-in-out infinite;
+              transition: 0.2s;
+            }
+            @keyframes radius-three {
+              0% {
+                opacity: 0;
+                transition: 0.2s;
+              }
+              30% {
+                opacity: 1;
+                transition: 0.2s;
+              }
+              100% {
+                opacity: 0;
+                transition: 0.2s;
+              }
+            }
+          }
+        }
+      }
+    }
+    .more{
+      width: calc(100% - 100px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: #454545;
+      font-size: 40px;
+      text-transform: uppercase;
+      margin-top: 50px;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-right: 100px;
+    }
+    .more:hover{
+      color: #6E037B;
+      transition: 0.2s;
+    }
+  }
+}

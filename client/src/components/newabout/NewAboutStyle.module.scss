@@ -1,0 +1,351 @@
+@media screen and (min-width: 900px){
+  .main{
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .containter{
+      width: 100%;
+      max-width: 1920px;
+      min-height: 500%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 100px;
+      position: relative;
+
+      .btn {
+        width: 30%;
+        height: 500px;
+        background-color: #D9D9D9;
+        position: relative;
+        overflow: hidden; /* Создаем маску для .active */
+        transition: 0.2s;
+        cursor: pointer;
+        z-index: 0;
+        .up {
+          width: calc(100% - 30px);
+          //height: calc(50% - 30px);
+          padding: 30px 0 0 30px;
+          z-index: 2;
+          position: relative;
+          transition: 1s ease-in-out;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .ic{
+            width: 99px;
+            height: 140px;
+            background-image: url("../images/next.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: 1s ease-in-out;
+            margin: 0 30px 0 0 ;
+          }
+          .abouttext{
+            font-size: 90px;
+            font-weight: 400;
+            z-index: 3;
+            transition: 1s ease-in-out;
+            margin-top: 15px;
+          }
+        }
+
+
+        .active {
+
+          z-index: 1;
+          position: absolute;
+          bottom: -70%;
+          left: -0%;
+          width: 130%;
+          height: 100%;
+          //background: linear-gradient(60deg, #452684, #592684);
+          background-color: #410099;
+          transform: rotate(-10deg); /* Поворачиваем блок */
+          transition: 1s ease-in-out; /* Плавная анимация */
+        }
+
+      }
+      .btn:hover{
+        .up{
+          transition: 1s ease-in-out;
+          .ic{
+
+            transition: 1s ease-in-out;
+            background-image: url("../images/nextwhite.svg");
+          }
+          .abouttext{
+            font-size: 90px;
+            font-weight: 400;
+            z-index: 3;
+            color: #FFF;
+            transition: 1s ease-in-out;
+          }
+        }
+        .active {
+
+          width: 150%;
+          height: 150%;
+          bottom: -10%;
+          left: -10%;
+          transform: rotate(-0deg);
+        }}
+
+      .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: calc(70% - 30px - 60px);
+        height: calc(500px - 60px);
+        padding: 30px;
+        font-weight: 400;
+        font-size: 30px;
+        //background: linear-gradient(60deg, #452684, #592684);
+        background-color: #410099;
+        color: #FFF;
+        p{
+          margin-top: 10px;
+        }
+      }
+    }
+
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 900px){
+  .main{
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .containter{
+      width: 100%;
+      max-width: 1920px;
+      min-height: 500%;
+      display: flex;
+      flex-direction: column;
+      //justify-content: space-between;
+      margin-bottom: 100px;
+      position: relative;
+
+      .btn {
+        width: 100%;
+        //height: 500px;
+        background-color: #050024;
+        position: relative;
+        overflow: hidden; /* Создаем маску для .active */
+        transition: 0.2s;
+        cursor: pointer;
+        z-index: 0;
+        .up {
+          width: calc(100% - 30px);
+          //height: calc(50% - 30px);
+          padding: 30px 0 0 30px;
+          z-index: 2;
+          position: relative;
+          transition: 1s ease-in-out;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .ic{
+            display: none;
+            width: 99px;
+            height: 140px;
+            background-image: url("../images/next.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: 1s ease-in-out;
+            margin: 0 30px 0 0 ;
+          }
+          .abouttext{
+            font-size: 60px;
+            font-weight: 400;
+            z-index: 3;
+            transition: 1s ease-in-out;
+            margin-top: 15px;
+            color: #FFFFFF;
+            //font-family: 'ALS', sans-serif;
+          }
+        }
+
+
+        //.active {
+        //
+        //  z-index: 1;
+        //  position: absolute;
+        //  bottom: -70%;
+        //  left: -0%;
+        //  width: 130%;
+        //  height: 100%;
+        //  background: linear-gradient(60deg, #592684, #452684);
+        //  transform: rotate(-10deg); /* Поворачиваем блок */
+        //  transition: 1s ease-in-out; /* Плавная анимация */
+        //}
+
+      }
+      .btn:hover{
+        .up{
+          transition: 1s ease-in-out;
+          .ic{
+
+            transition: 1s ease-in-out;
+            background-image: url("../images/nextwhite.svg");
+          }
+          .abouttext{
+            font-size: 90px;
+            font-weight: 400;
+            z-index: 3;
+            color: #FFF;
+            transition: 1s ease-in-out;
+          }
+        }
+        .active {
+
+          width: 150%;
+          height: 150%;
+          bottom: -10%;
+          left: -10%;
+          transform: rotate(-0deg);
+        }}
+
+      .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: calc(100% - 60px);
+        height: calc(500px - 60px);
+        padding: 30px;
+        font-weight: 400;
+        font-size: 18px;
+        //background: linear-gradient(60deg, #452684, #592684);
+        background-color: #410099;
+        color: #FFF;
+        p{
+          margin-top: 10px;
+        }
+      }
+    }
+
+  }
+}
+@media screen and (max-width: 400px){
+  .main{
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .containter{
+      width: 100%;
+      max-width: 1920px;
+      min-height: 500%;
+      display: flex;
+      flex-direction: column;
+      //justify-content: space-between;
+      margin-bottom: 100px;
+      position: relative;
+
+      .btn {
+        width: 100%;
+        //height: 500px;
+        background-color: #050024;
+        position: relative;
+        overflow: hidden; /* Создаем маску для .active */
+        transition: 0.2s;
+        cursor: pointer;
+        z-index: 0;
+        .up {
+          width: calc(100% - 30px);
+          //height: calc(50% - 30px);
+          padding: 30px 0 0 30px;
+          z-index: 2;
+          position: relative;
+          transition: 1s ease-in-out;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .ic{
+            display: none;
+            width: 99px;
+            height: 140px;
+            background-image: url("../images/next.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: 1s ease-in-out;
+            margin: 0 30px 0 0 ;
+          }
+          .abouttext{
+            font-size: 40px;
+            font-weight: 400;
+            z-index: 3;
+            transition: 1s ease-in-out;
+            margin-top: 15px;
+            color: #FFFFFF;
+            //font-family: 'ALS', sans-serif;
+          }
+        }
+
+
+        //.active {
+        //
+        //  z-index: 1;
+        //  position: absolute;
+        //  bottom: -70%;
+        //  left: -0%;
+        //  width: 130%;
+        //  height: 100%;
+        //  background: linear-gradient(60deg, #592684, #452684);
+        //  transform: rotate(-10deg); /* Поворачиваем блок */
+        //  transition: 1s ease-in-out; /* Плавная анимация */
+        //}
+
+      }
+      .btn:hover{
+        .up{
+          transition: 1s ease-in-out;
+          .ic{
+
+            transition: 1s ease-in-out;
+            background-image: url("../images/nextwhite.svg");
+          }
+          .abouttext{
+            font-size: 90px;
+            font-weight: 400;
+            z-index: 3;
+            color: #FFF;
+            transition: 1s ease-in-out;
+          }
+        }
+        .active {
+
+          width: 150%;
+          height: 150%;
+          bottom: -10%;
+          left: -10%;
+          transform: rotate(-0deg);
+        }}
+
+      .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: calc(100% - 60px);
+        height: calc(500px - 60px);
+        padding: 30px;
+        font-weight: 400;
+        font-size: 16px;
+        //background: linear-gradient(60deg, #452684, #592684);
+        background-color: #410099;
+        color: #FFF;
+        p{
+          margin-top: 10px;
+        }
+      }
+    }
+
+  }
+}
