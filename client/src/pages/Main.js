@@ -11,6 +11,11 @@ import Actives from "../components/activeholding/Actives";
 import Footer from "../components/footer/Footer";
 import {useEffect} from "react";
 import {useLocation} from "react-router-dom";
+import ContactStrock from "../components/contactstrock/ContactStrock";
+import Carusel from "../components/contactstrock/Carusel";
+import ProductBlock from "../components/products/ProductBlock";
+import AboutFitness from "../components/about/AboutFitness";
+import Cosmos from "../components/cosmos/Cosmos";
 
 function Main () {
 
@@ -18,6 +23,11 @@ function Main () {
     return (
         <div className={style.bodymain}>
             <NewHeader />
+            <ContactStrock />
+            <ProductBlock />
+            <AboutFitness />
+            <Cosmos />
+            {/*<Carusel />*/}
             <TwoBlocks />
             <Group />
             <NewAbout />

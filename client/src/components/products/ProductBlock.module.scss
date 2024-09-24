@@ -1,0 +1,107 @@
+.main{
+  width: 100%;
+  min-height: 300px;
+  background-color: #121212;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container{
+    width: 100%;
+    max-width: 1919px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .productCard{
+      width: calc(100% / 3 - 20px);
+      height: 300px;
+      border: 1px solid #F5DE1E;
+      margin-left: -1px;
+      margin-top: -1px;
+      .cardContainer{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        transition: 0.3s;
+        .title{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          font-weight: 800;
+          font-size: 60pt;
+          color: rgba(50,50,50,0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 0.3s;
+        }
+        .overlay{
+          width: calc(100% - 40px);
+          height: calc(100% - 40px);
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          color: #E1E1E1;
+          position: relative;
+          transition: 0.3s;
+          .priceTag{
+            background-color: #F5DE1E;
+            color: #121212;
+            font-size: 14pt;
+            font-weight: 600;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 20px 40px;
+            transition: 0.3s;
+          }
+          .description{
+            font-size: 16pt;
+            transition: 0.3s;
+          }
+        }
+      }
+      .cardContainer:hover{
+        position: relative;
+        background-color: #F5DE1E;
+        transition: 0.3s;
+        .title{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          font-weight: 800;
+          font-size: 60pt;
+          color: rgba(0,0,0,0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 0.3s;
+        }
+        .overlay{
+          width: calc(100% - 40px);
+          transition: 0.3s;
+          .priceTag{
+            display: flex;
+            justify-content: center;
+            transition: 0.3s;
+            background-color: rgba(0,0,0,0.8);
+            color: #FFF;
+          }
+          .description{
+            color: rgba(0,0,0,0.5);
+            transition: 0.3s;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
