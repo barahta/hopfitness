@@ -25,7 +25,7 @@ function Main () {
             <NewHeader />
             <ContactStrock />
             <ProductBlock />
-            <AboutFitness />
+            {/*<AboutFitness />*/}
             <Cosmos />
             {/*<Carusel />*/}
             <TwoBlocks />
