@@ -16,6 +16,10 @@ import Carusel from "../components/contactstrock/Carusel";
 import ProductBlock from "../components/products/ProductBlock";
 import AboutFitness from "../components/about/AboutFitness";
 import Cosmos from "../components/cosmos/Cosmos";
+import AboutParalax from "../components/newabout/AboutParalax";
+import ZonesBlock from "../components/zones/Zone";
+import ZoneSlider from "../components/zones/ZoneSlider";
+import RoomsBlock from "../components/zones/RoomsBlock";
 
 function Main () {
 
@@ -27,6 +31,10 @@ function Main () {
             <ProductBlock />
             {/*<AboutFitness />*/}
             <Cosmos />
+            <AboutParalax />
+            {/*<ZonesBlock />*/}
+            <ZoneSlider />
+            <RoomsBlock />
             {/*<Carusel />*/}
             <TwoBlocks />
             <Group />

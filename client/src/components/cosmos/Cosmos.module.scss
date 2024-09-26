@@ -7,9 +7,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    //margin-top: 2px;
+    margin-top: -2px;
     background-color: #121212;
-    padding-top: 100px;
+    padding-top: 0px;
     //padding-top: 100px;
 
     .container{
@@ -20,10 +20,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      //background-image: url("./paralax.svg");
-      background-size: 100%;
+      background-image: url("./paralax.svg");
+      background-size: 15%;
       background-attachment: fixed;
-      background-position: center center;
+      background-position: right center;
       background-repeat: no-repeat;
       .content{
         width: 100%;
@@ -255,12 +255,12 @@
       }
 
     }
-    @media (min-width: 1920px) {
-      .container {
-        background-size: 1920px auto;
-        background-repeat: no-repeat;
-      }
-    }
+    //@media (min-width: 1920px) {
+    //  .container {
+    //    background-size: 1920px auto;
+    //    background-repeat: no-repeat;
+    //  }
+    //}
     @media (max-width: 1200px) {
       .container {
         width: 100%;
