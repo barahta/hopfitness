@@ -8,11 +8,13 @@
     z-index: 0;
 
     .omedia{
-      width: 1140px;
+      width: 650px;
       height: 350px;
       background-image: url("./logomain.svg");
-      background-size: cover;
+      background-size: 100%;
       position: absolute;
+      background-repeat: no-repeat;
+      background-position: center center;
       bottom: 10px;
       left: 10px;
       z-index: 1;

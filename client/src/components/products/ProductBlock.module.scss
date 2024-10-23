@@ -1,4 +1,4 @@
-.main{
+.main {
   width: 100%;
   min-height: 300px;
   background-color: #121212;
@@ -6,25 +6,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .container{
+
+  .container {
     width: 100%;
     max-width: 1919px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    .productCard{
+
+    .productCard {
       width: calc(100% / 3 - 20px);
       height: 300px;
       border: 1px solid #F5DE1E;
       margin-left: -1px;
       margin-top: -1px;
-      .cardContainer{
+      opacity: 0; /* Изначально блок невидим */
+      transform: translateY(30px); /* Сдвиг вниз */
+      transition: opacity 0.6s ease, transform 0.6s ease;
+
+      &.visible {
+        opacity: 1; /* Проявление блока */
+        transform: translateY(0); /* Возврат к исходному положению */
+      }
+
+      .cardContainer {
         width: 100%;
         height: 100%;
         position: relative;
         cursor: pointer;
         transition: 0.3s;
-        .title{
+
+        .title {
           position: absolute;
           top: 0;
           left: 0;
@@ -32,13 +44,14 @@
           height: 100%;
           font-weight: 800;
           font-size: 60pt;
-          color: rgba(50,50,50,0.5);
+          color: rgba(50, 50, 50, 0.5);
           display: flex;
           justify-content: center;
           align-items: center;
           transition: 0.3s;
         }
-        .overlay{
+
+        .overlay {
           width: calc(100% - 40px);
           height: calc(100% - 40px);
           padding: 20px;
@@ -48,7 +61,8 @@
           color: #E1E1E1;
           position: relative;
           transition: 0.3s;
-          .priceTag{
+
+          .priceTag {
             background-color: #F5DE1E;
             color: #121212;
             font-size: 14pt;
@@ -59,49 +73,34 @@
             padding: 20px 40px;
             transition: 0.3s;
           }
-          .description{
+
+          .description {
             font-size: 16pt;
             transition: 0.3s;
           }
         }
       }
-      .cardContainer:hover{
+
+      .cardContainer:hover {
         position: relative;
         background-color: #F5DE1E;
         transition: 0.3s;
-        .title{
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          font-weight: 800;
-          font-size: 60pt;
-          color: rgba(0,0,0,0.8);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          transition: 0.3s;
+
+        .title {
+          color: rgba(0, 0, 0, 0.8);
         }
-        .overlay{
-          width: calc(100% - 40px);
-          transition: 0.3s;
-          .priceTag{
-            display: flex;
-            justify-content: center;
-            transition: 0.3s;
-            background-color: rgba(0,0,0,0.8);
+
+        .overlay {
+          .priceTag {
+            background-color: rgba(0, 0, 0, 0.8);
             color: #FFF;
           }
-          .description{
-            color: rgba(0,0,0,0.5);
-            transition: 0.3s;
+
+          .description {
+            color: rgba(0, 0, 0, 0.5);
           }
         }
       }
-
     }
-
   }
-
 }

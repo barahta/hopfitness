@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import {observer} from "mobx-react-lite";
 import Actives from "./pages/Actives";
+import ZonesPage from "./pages/ZonesPage";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Routes>
 
             <Route path="/" element={<Main />} />
+            <Route path="/zones" element={<ZonesPage />} />
             <Route path="/allnews" element={<AllNews />} />
             <Route path="/vakansii" element={<Vakansii />} />
             <Route path="/contacts" element={<Contacts />} />

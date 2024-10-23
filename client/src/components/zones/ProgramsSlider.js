@@ -1,14 +1,13 @@
-import style from './ZoneSlider.module.scss';
+import style from './ProgramsSlider.module.scss';
 import { useState, useRef, useEffect } from "react";
 
-function ZoneSlider() {
+function ProgramsSlider() {
     const mans = [
-        { name: 'Максим Гамецкий', group: 'Силовая', image: '1231.jpg', age: '12 лет' },
-        { name: 'Анна Либуркина', group: 'Функциональные тренировки', image: '1232.jpg', age: '7 лет' },
-        { name: 'Татьяна Антоненко', group: 'Кроссфит', image: '1233.jpg', age: '4 года' },
-        { name: 'Александр Солянников', group: 'Тяжелая атлетика', image: '1234.jpg', age: '4 года' },
-        { name: 'Елена Баскакова', group: 'Бодибилдинг', image: '1235.jpg', age: '4 года' },
-        { name: 'Дмитрий Перминов', group: 'Бокс', image: '1236.jpg', age: '8 лет' }
+        { name: 'БОКС', group: 'Способствует укреплению мышц, суставов, связок, сердца, развитию мышечной силы и выносливости, жиросжиганию.', image: 'program1.jpg', age: '' },
+        { name: 'САЙКЛ', group: 'Программа способствует тренировке сердечно-сосудистой, дыхательной систем, развитию мышечной силы', image: 'program2.jpg', age: '' },
+        { name: 'ПИЛАТЕС', group: 'Программа упражнений, направленных на развитие мышц и увеличение плотности тела.', image: 'program3.jpg', age: '' },
+        { name: 'КРОССФИТ', group: 'Программа упражнений на силу и выносливость, состоящая в основном из анаэробных упражнений, гимнастики и тяжёлой атлетики', image: 'program4.jpg', age: '' },
+        { name: 'ЙОГА', group: 'Программа направлена на духовное уравновешивание, укрепление здоровья, формирование мышечного корсета', image: 'program5.jpg', age: '' }
     ];
 
     const [currentPosition, setCurrentPosition] = useState(0);
@@ -59,7 +58,7 @@ function ZoneSlider() {
         <div className={style.main}>
             <div className={style.container}>
                 <div className={style.title}>
-                    <div className={style.text}>Наши тренеры</div>
+                    <div className={style.text}>Наши программы</div>
                 </div>
                 <div className={style.slider}>
                     <div className={style.nextbtn} onClick={() => nextMan('prev')}>
@@ -81,10 +80,10 @@ function ZoneSlider() {
                                     style={{ backgroundImage: `url('/images/${man.image}')` }}
                                 >
                                     <div className={style.active}>
-                                        <div className={style.group}>{man.group}</div>
+                                        <div className={style.group}></div>
                                         <div className={style.name}>
                                             <div className={style.fio}>{man.name}</div>
-                                            <div className={style.age}>Тренерский стаж - {man.age}</div>
+                                            <div className={style.age}>{man.group}</div>
                                         </div>
                                         <div className={style.btn}>Записаться</div>
                                     </div>
@@ -99,11 +98,11 @@ function ZoneSlider() {
             </div>
             <div className={style.more}>
                 <div className={style.moreblock}>
-                    <div className={style.btn}><div className={style.next}></div>Подробнее</div>
+                    <div className={style.btn}><div className={style.next}></div>Все программы</div>
                 </div>
             </div>
         </div>
     );
 }
 
-export default ZoneSlider;
+export default ProgramsSlider;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './ProductBlock.module.scss';
 
 function ProductBlock() {
@@ -39,26 +39,48 @@ function ProductBlock() {
             description: "Вечернее посещение центра для тех, кто хочет провести вечер с пользой",
             name: 'FAMILY'
         },
-        // Добавьте больше карточек по аналогии
     ];
 
-    return (
+    const [visible, setVisible] = useState([]);
 
-            <div className={style.main}>
-                <div className={style.container}>
-                    {products.map((product, index) => (
-                        <div key={index} className={style.productCard}>
-                            <div className={style.cardContainer}>
-                                <div className={style.title}>{product.name}</div>
-                                <div className={style.overlay}>
-                                    <div className={style.priceTag}>{product.price}</div>
-                                    <div className={style.description}>{product.description}</div>
-                                </div>
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setVisible((prevVisible) => [...prevVisible, entry.target.dataset.index]);
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const elements = document.querySelectorAll(`.${style.productCard}`);
+        elements.forEach((el) => observer.observe(el));
+
+        return () => {
+            elements.forEach((el) => observer.unobserve(el));
+        };
+    }, []);
+
+    return (
+        <div className={style.main}>
+            <div className={style.container}>
+                {products.map((product, index) => (
+                    <div
+                        key={index}
+                        className={`${style.productCard} ${visible.includes(index.toString()) ? style.visible : ''}`}
+                        data-index={index}
+                    >
+                        <div className={style.cardContainer}>
+                            <div className={style.title}>{product.name}</div>
+                            <div className={style.overlay}>
+                                <div className={style.priceTag}>{product.price}</div>
+                                <div className={style.description}>{product.description}</div>
                             </div>
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
+        </div>
     );
 }
 

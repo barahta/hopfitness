@@ -89,10 +89,10 @@
           height: 100%;
           .man {
             width: 100%;
-            min-width: calc(300px);
+            min-width: calc(310px);
             max-width: calc(600px);
-            margin: 0 20px;
-            height: 100%;
+            margin: 0 10px;
+            height: calc(100%);
             background-color: #fff;
             background-size: cover;
             background-position: center center;
@@ -129,7 +129,7 @@
               transition: 0.2s;
               display: flex;
               flex-direction: column;
-              justify-content: space-between;
+              justify-content: flex-end;
               align-items: center;
               color: #fff;
 
@@ -139,19 +139,26 @@
               }
 
               .name {
-                width: 80%;
-
+                width: 100%;
+                min-height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
                 .fio {
                   text-align: center;
                   text-transform: uppercase;
-                  color: rgba(255, 255, 255, 1);
+                  color: rgba(245, 222, 30, 1);
                   font-size: 20pt;
                   font-weight: 600;
+                  background-color: #121212;
+                  width: 100%;
                 }
 
                 .age {
                   text-align: center;
                   color: rgba(255, 255, 255, 0);
+                  width: 90%;
                 }
               }
 
@@ -187,7 +194,7 @@
               }
 
               .name {
-                width: 80%;
+                width: 100%;
 
                 .fio {
                   text-align: center;
@@ -195,11 +202,13 @@
                   color: rgba(245, 222, 30, 1);
                   font-size: 20pt;
                   font-weight: 600;
+                  width: 100%;
                 }
 
                 .age {
                   text-align: center;
                   color: rgba(255, 255, 255, 1);
+                  width: 90%;
                 }
               }
 

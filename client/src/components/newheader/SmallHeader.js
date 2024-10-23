@@ -38,7 +38,7 @@ function SmallHeader(){
             </div>
             <div className={style.container}>
                 <Link to='/' className={style.leftpart}>
-                    <img src="/files/header/logomain3.svg" alt=""/>
+                    <img src="/files/header/logomain.svg" alt=""/>
                 </Link>
                 <div className={style.rightpart}>
                     <div className={style.burder} onClick={()=>setOpenburger(!openburger)} style={(openburger)?{rotate: '90deg', width: '70px'}:{rotate: '0deg'}}>
@@ -48,23 +48,35 @@ function SmallHeader(){
                     </div>
                     <div className={style.menu}>
                         <Link to="/activegroup"  className={style.page}>
-                            <div className={style.text}>Активы группы</div>
+                            <div className={style.text}>О нас</div>
                             <div className={style.active}></div>
                         </Link>
-                        {/*<div className={style.page}>*/}
-                        {/*    <div className={style.text}>О нас</div>*/}
-                        {/*    <div className={style.active}></div>*/}
-                        {/*</div>*/}
                         <Link to='/allnews' className={style.page}>
-                            <div className={style.text}>Новости</div>
+                            <div className={style.text}>Зоны</div>
                             <div className={style.active}></div>
                         </Link>
                         <Link to='/contacts' className={style.page}>
+                            <div className={style.text}>Программы</div>
+                            <div className={style.active}></div>
+                        </Link>
+                        <Link to='/vakansii' className={style.page}>
+                            <div className={style.text}>Тренеры</div>
+                            <div className={style.active}></div>
+                        </Link>
+                        <Link to='/vakansii' className={style.page}>
+                            <div className={style.text}>Клубная карта</div>
+                            <div className={style.active}></div>
+                        </Link>
+                        <Link to='/vakansii' className={style.page}>
+                            <div className={style.text}>Галерея</div>
+                            <div className={style.active}></div>
+                        </Link>
+                        <Link to='/vakansii' className={style.page}>
                             <div className={style.text}>Контакты</div>
                             <div className={style.active}></div>
                         </Link>
                         <Link to='/vakansii' className={style.page}>
-                            <div className={style.text}>Вакансии</div>
+                            <div className={style.text}>Личный кабинет</div>
                             <div className={style.active}></div>
                         </Link>
                     </div>
