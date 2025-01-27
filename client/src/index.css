@@ -9,7 +9,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #8F4899;  /* Цвет ползунка */
+  background-color: #CCC;  /* Цвет ползунка */
   border-radius: 4px;  /* Закругленные края ползунка */
 }
 
@@ -19,7 +19,7 @@
   padding: 0px;
   text-decoration: none;
   scrollbar-width: thin;  /* Устанавливает тонкую полосу прокрутки */
-  scrollbar-color: #8F4899 #000;  /* Устанавливает цвет ползунка и полосы прокрутки */
+  scrollbar-color: #CCC #000;  /* Устанавливает цвет ползунка и полосы прокрутки */
   /*outline: 1px solid red;*/
 
 }

@@ -8,7 +8,7 @@ const darkThemeStyle = {
             "type": "Feature",
             "geometry": {
                 "type": "Point",
-                "coordinates": [55.751574, 37.573856]
+                "coordinates": [61.241436, 73.387643]
             },
             "properties": {
                 "iconColor": "#ff0000"
@@ -25,8 +25,8 @@ const darkThemeStyle = {
                         "type": "Polygon",
                         "coordinates": [
                             [
-                                [55.751574, 37.573856],
-                                [55.751574, 37.573856]
+                                [61.241436, 73.387643],
+                                [61.241436, 73.387643]
                             ]
                         ]
                     },
@@ -41,14 +41,14 @@ const darkThemeStyle = {
 };
 
 const MyMap = () => {
-    const coordinates = [61.2545566,73.4257884]; // Пример: Москва, Красная площадь
+    const coordinates = [61.241436, 73.387643]; // Пример: Москва, Красная площадь
 
     return (
         <YMaps>
             <Map
                 defaultState={{
                     center: coordinates,
-                    zoom: 10,
+                    zoom: 15,
                     controls: [] // Убираем стандартные элементы управления для кастомизации
                 }}
                 width="100%"  // Укажите ширину карты

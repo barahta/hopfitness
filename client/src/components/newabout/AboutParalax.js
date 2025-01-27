@@ -40,7 +40,7 @@ function AboutParalax () {
     const [activeblock, setActiveblock] = useState('')
 
     return(
-        <div className={style.main}>
+        <div className={style.main}  id='aboutus'>
             <div className={style.slash}></div>
             <div className={style.paralax}>
             </div>
@@ -57,7 +57,7 @@ function AboutParalax () {
                             Оригинальный дизайн, современные технологии, новейшее оборудование центра позволят сделать Вам уверенный шаг к новым достижениям!
                         </div>
                         <div className={style.desc}>
-                            Быть членом клуба Hope Fitness —значит получить доступ к неограниченным возможностям фитнеса формата "Премиум"
+                            Быть членом клуба Hope Fitness — значит получить доступ к неограниченным возможностям фитнеса формата "Премиум"
                         </div>
                     </div>
                     <div className={style.left}>

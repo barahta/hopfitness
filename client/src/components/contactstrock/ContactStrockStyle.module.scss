@@ -1,113 +1,231 @@
-.main {
-  width: 100%;
-  min-height: 300px;
-  height: 100%;
-  background-color: #121212;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .container {
+@media screen and (min-width: 550px){
+  .main {
     width: 100%;
-    max-width: 1919px;
+    min-height: 300px;
     height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0; /* Начальное состояние невидимое */
-    transform: translateY(80px); /* Смещение для анимации */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-
-  .fadeIn {
-    opacity: 1; /* При появлении делаем видимым */
-    transform: translateY(0); /* Возвращаем в исходное положение */
-  }
-
-  .start {
-    width: calc(100% / 5 - 20px);
-    padding: 10px;
-    border: none;
-    border-right: 1px solid #F5DE1E;
-    height: 220px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .elem {
-    width: calc(100% / 5 - 20px);
-    padding: 10px;
-    border: none;
-    border-right: 1px solid #F5DE1E;
-    height: 220px;
+    background-color: #121212;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .left {
-      color: #FFF;
-      margin-right: 20px;
+    .container {
+      width: 100%;
+      max-width: 1919px;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0; /* Начальное состояние невидимое */
+      transform: translateY(80px); /* Смещение для анимации */
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
 
-      i {
+    .fadeIn {
+      opacity: 1; /* При появлении делаем видимым */
+      transform: translateY(0); /* Возвращаем в исходное положение */
+    }
+
+    .start {
+      width: calc(100% / 5 - 20px);
+      padding: 10px;
+      border: none;
+      border-right: 1px solid #F5DE1E;
+      height: 220px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .elem {
+      width: calc(100% / 5 - 20px);
+      padding: 10px;
+      border: none;
+      border-right: 1px solid #F5DE1E;
+      height: 220px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .left {
         color: #FFF;
-        font-size: 50px;
+        margin-right: 20px;
+
+        i {
+          color: #FFF;
+          font-size: 50px;
+        }
+      }
+
+      .right {
+        color: #FFF;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        .title {
+          font-size: 20pt;
+          font-weight: 600;
+        }
+
+        .phone {
+          font-size: 16pt;
+        }
       }
     }
 
-    .right {
-      color: #FFF;
+    .next {
+      width: calc(100% / 5 - 20px);
+      padding: 10px;
+      height: 220px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       justify-content: center;
+      align-items: flex-start;
+      color: #FFF;
 
-      .title {
-        font-size: 20pt;
-        font-weight: 600;
+      .up {
+        display: flex;
+
+        i {
+          margin: 0 10px;
+          font-size: 60px;
+          transition: 0.2s;
+          cursor: pointer;
+        }
+
+        i:hover {
+          color: #F5DE1E;
+          transition: 0.2s;
+        }
       }
 
-      .phone {
+      .down {
+        padding: 20px 40px;
+        background-color: #F5DE1E;
+        border-right: 2px solid #F5DE1E;
+        color: #000000;
         font-size: 16pt;
+        margin-top: 20px;
+        margin-left: 10px;
+        cursor: pointer;
       }
     }
   }
-
-  .next {
-    width: calc(100% / 5 - 20px);
-    padding: 10px;
-    height: 220px;
+}
+@media screen and (max-width: 550px){
+  .main {
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    background-color: #121212;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    color: #FFF;
+    align-items: center;
 
-    .up {
+    .container {
+      width: 100%;
+      max-width: 1919px;
+      height: 100%;
       display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      opacity: 0; /* Начальное состояние невидимое */
+      transform: translateY(80px); /* Смещение для анимации */
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
 
-      i {
-        margin: 0 10px;
-        font-size: 60px;
-        transition: 0.2s;
-        cursor: pointer;
+    .fadeIn {
+      opacity: 1; /* При появлении делаем видимым */
+      transform: translateY(0); /* Возвращаем в исходное положение */
+    }
+
+    .start {
+      width: calc(100% / 1 - 20px);
+      padding: 10px;
+      border: none;
+      border-right: 1px solid #F5DE1E;
+      //height: 220px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .elem {
+      width: calc(100% / 1 - 60px);
+      padding: 10px 30px;
+      border: none;
+      border-right: 1px solid #F5DE1E;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom: 1px solid #CCC;
+      .left {
+        color: #FFF;
+        margin-right: 20px;
+
+        i {
+          color: #FFF;
+          font-size: 50px;
+        }
       }
 
-      i:hover {
-        color: #F5DE1E;
-        transition: 0.2s;
+      .right {
+        color: #FFF;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        .title {
+          font-size: 20pt;
+          font-weight: 600;
+        }
+
+        .phone {
+          font-size: 16pt;
+        }
       }
     }
 
-    .down {
-      padding: 20px 40px;
-      background-color: #F5DE1E;
-      border-right: 2px solid #F5DE1E;
-      color: #000000;
-      font-size: 16pt;
-      margin-top: 20px;
-      margin-left: 10px;
-      cursor: pointer;
+    .next {
+      width: calc(100% / 1 - 20px);
+      padding: 10px;
+      //height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #FFF;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      .up {
+        display: flex;
+        i {
+          margin: 0 10px;
+          font-size: 60px;
+          transition: 0.2s;
+          cursor: pointer;
+        }
+
+        i:hover {
+          color: #F5DE1E;
+          transition: 0.2s;
+        }
+      }
+
+      .down {
+        padding: 20px 40px;
+        background-color: #F5DE1E;
+        border-right: 2px solid #F5DE1E;
+        color: #000000;
+        font-size: 16pt;
+        margin-top: 20px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
     }
   }
 }

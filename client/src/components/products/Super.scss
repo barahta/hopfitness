@@ -1,0 +1,77 @@
+.super{
+  //border: 1px solid #F5DE1E;
+  background-color: #F5DE1E;
+
+  .cardContainer{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+
+    .title{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-weight: 800;
+      font-size: 50pt;
+      color: #454545;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s;
+      text-align: center;
+      line-height: 0.8;
+    }
+    .overlay{
+      width: calc(100% - 40px);
+      height: calc(100% - 40px);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #454545;
+      position: relative;
+      transition: 0.3s;
+      .priceTag{
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #FFF;
+        //background-color: #F5DE1E;
+        //color: #121212;
+        font-size: 14pt;
+        font-weight: 600;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px 40px;
+        transition: 0.3s;
+      }
+      .description{
+        font-size: 16pt;
+        transition: 0.3s;
+      }
+    }
+  }
+  .cardContainer:hover {
+    position: relative;
+    background-color: #F5DE1E;
+    transition: 0.3s;
+
+    .title {
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    .overlay {
+      .priceTag {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #FFF;
+      }
+
+      .description {
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}

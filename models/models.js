@@ -62,12 +62,30 @@ Skills.hasMany(Documents, { foreignKey: 'skill_id', as: 'documents' });
 Documents.belongsTo(Skills, { foreignKey: 'skill_id', as: 'skill' });
 
 const News = sequelize.define('news',{
-    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
-    title: {type: DataTypes.TEXT},
-    desc: {type: DataTypes.TEXT},
-    text: {type: DataTypes.JSONB,allowNull: false,defaultValue: []},
-    public: {type: DataTypes.JSONB,allowNull: false,defaultValue: [] },
-    image: {type: DataTypes.TEXT}
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    title: {
+        type: DataTypes.TEXT
+    },
+    desc: {
+        type: DataTypes.TEXT
+    },
+    text: {
+        type: DataTypes.JSONB, // Хранение массива строк
+        allowNull: false,
+        defaultValue: [] // По умолчанию пустой массив
+    },
+    public: {
+        type: DataTypes.JSONB, // Хранение массива объектов
+        allowNull: false,
+        defaultValue: [] // По умолчанию пустой массив
+    },
+    image: {
+        type: DataTypes.TEXT
+    }
 })
 
 const Sites = sequelize.define('sites',{
@@ -78,24 +96,81 @@ const Sites = sequelize.define('sites',{
 })
 
 const AUPs = sequelize.define('aup',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    firstname: {type: DataTypes.TEXT},
+    secondname: {type: DataTypes.TEXT},
+    lastname: {type: DataTypes.TEXT},
+    developers: {type: DataTypes.TEXT},
+    email: {type: DataTypes.TEXT},
+    image: {type: DataTypes.TEXT}
+})
+const VakCompanies = sequelize.define('vakcompanies',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    name: {type: DataTypes.TEXT},
+    category: {type: DataTypes.TEXT}
+})
+const Vakansii = sequelize.define('vakansii',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    name: {type: DataTypes.TEXT},
+    respon: {
+        type: DataTypes.JSONB, // Хранение массива строк
+        allowNull: false,
+        defaultValue: [] // По умолчанию пустой массив
+    },
+    requierments: {
+        type: DataTypes.JSONB, // Хранение массива строк
+        allowNull: false,
+        defaultValue: [] // По умолчанию пустой массив
+    },
+    conditions: {
+        type: DataTypes.JSONB, // Хранение массива строк
+        allowNull: false,
+        defaultValue: [] // По умолчанию пустой массив
+    },
+    keyskills: {
+        type: DataTypes.JSONB, // Хранение массива строк
+        allowNull: false,
+        defaultValue: [] // По умолчанию пустой массив
+    },
+    open: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+    },
+    company: {type: DataTypes.TEXT},
+    email: {type: DataTypes.TEXT},
+})
+
+const About = sequelize.define('about',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    text: {type: DataTypes.TEXT},
+    company: {type: DataTypes.TEXT}
+})
+
+const GroupsComs = sequelize.define('groupscoms',{
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    firstname: {
+    name: {
         type: DataTypes.TEXT
     },
-    secondname: {
+    number: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    },
+    desc: {
         type: DataTypes.TEXT
     },
-    lastname: {
+    contacts: {
+        type: DataTypes.JSONB, // Хранение массива строк
+        allowNull: false,
+        defaultValue: [] // По умолчанию пустой массив
+    },
+    site: {
         type: DataTypes.TEXT
     },
-    developers: {
-        type: DataTypes.TEXT
-    },
-    email: {
+    logo: {
         type: DataTypes.TEXT
     },
     image: {
@@ -103,6 +178,225 @@ const AUPs = sequelize.define('aup',{
     }
 })
 
+const Activities = sequelize.define('activities',{
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    line: {
+        type: DataTypes.TEXT
+    },
+    name: {
+        type: DataTypes.TEXT
+    },
+    desc: {
+        type: DataTypes.TEXT
+    },
+    url: {
+        type: DataTypes.TEXT
+    }
+})
+
+const PacksKids = sequelize.define('packskids',{
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    capter: {  //раздел (hopekids или др
+        type: DataTypes.TEXT
+    },
+    name: {
+        type: DataTypes.TEXT
+    },
+    image: {
+        type: DataTypes.TEXT
+    },
+    time: {
+        type: DataTypes.TEXT
+    },
+    publicdesc: {
+        type: DataTypes.TEXT
+    },
+    desc: {
+        type: DataTypes.JSONB, // Хранение массива строк
+        allowNull: false,
+        defaultValue: [] // По умолчанию пустой массив
+    },
+    price: {
+        type: DataTypes.TEXT
+    },
+    priory: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+    }
+})
+const GalleryImages = sequelize.define('gallery',{
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    capter: {  //раздел (hopekids или др
+        type: DataTypes.TEXT
+    },
+    image: {
+        type: DataTypes.TEXT
+    }
+})
+
+const ContactsPage = sequelize.define('contactspage',{
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    capter: {  //раздел (hopekids или др
+        type: DataTypes.TEXT
+    },
+    city: {
+        type: DataTypes.TEXT
+    },
+    phone: {
+        type: DataTypes.JSONB, // Хранение массива строк
+        allowNull: false,
+        defaultValue: [] // По умолчанию пустой массив
+    },
+    adress: {
+        type: DataTypes.JSONB, // Хранение массива строк
+        allowNull: false,
+        defaultValue: [] // По умолчанию пустой массив
+    },
+    email: {
+        type: DataTypes.JSONB, // Хранение массива строк
+        allowNull: false,
+        defaultValue: [] // По умолчанию пустой массив
+    },
+    mapw: {
+        type: DataTypes.TEXT
+    },
+    maph: {
+        type: DataTypes.TEXT
+    },
+    ok: {
+        type: DataTypes.TEXT
+    },
+    vk: {
+        type: DataTypes.TEXT
+    },
+    instagram: {
+        type: DataTypes.TEXT
+    },
+    telegram: {
+        type: DataTypes.TEXT
+    },
+    youtube: {
+        type: DataTypes.TEXT
+    },
+    more: {
+        type: DataTypes.JSONB,
+        allowNull: false,
+        defaultValue: []
+    }
+})
+
+
+const ZonesPage = sequelize.define('zonespage',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    name: {type: DataTypes.TEXT},
+    desc: {type: DataTypes.TEXT},
+    capter: {type: DataTypes.TEXT},
+    priory:  {type: DataTypes.TEXT},
+    mainimg: {type: DataTypes.TEXT},
+    maindesc: {type: DataTypes.TEXT},
+    firstimg: {type: DataTypes.TEXT},
+    firstdesc: {type: DataTypes.TEXT},
+    secondimg: {type: DataTypes.TEXT},
+    seconddesc: {type: DataTypes.TEXT},
+    lastimg: {
+        type: DataTypes.JSONB,
+        allowNull: false,
+        defaultValue: []
+    },
+})
+
+const ZonesSlider = sequelize.define('zonesslider',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    name: {type: DataTypes.TEXT},
+    desc: {type: DataTypes.TEXT},
+    capter: {type: DataTypes.TEXT},
+    priory:  {type: DataTypes.TEXT},
+    image: {type: DataTypes.TEXT},
+})
+
+const MobileApp = sequelize.define('mobileapp',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    android: {type: DataTypes.TEXT},
+    apple: {type: DataTypes.TEXT},
+    capter: {type: DataTypes.TEXT},
+})
+
+
+const Advantages = sequelize.define('advantages',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    onename: {type: DataTypes.TEXT},
+    onedesc: {type: DataTypes.TEXT},
+    twoname: {type: DataTypes.TEXT},
+    twodesc: {type: DataTypes.TEXT},
+    threename: {type: DataTypes.TEXT},
+    threedesc: {type: DataTypes.TEXT},
+    fourname: {type: DataTypes.TEXT},
+    fourdesc: {type: DataTypes.TEXT},
+    fivename: {type: DataTypes.TEXT},
+    fivedesc: {type: DataTypes.TEXT},
+    sixname: {type: DataTypes.TEXT},
+    sixdesc: {type: DataTypes.TEXT},
+    capter: {type: DataTypes.TEXT},
+})
+
+const OurTrainers = sequelize.define('ourtrainers',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    name: {type: DataTypes.TEXT},
+    stazh: {type: DataTypes.TEXT},
+    desc: {type: DataTypes.TEXT},
+    room: {type: DataTypes.TEXT},
+    group: {type: DataTypes.TEXT},
+    image: {type: DataTypes.TEXT},
+    capter: {type: DataTypes.TEXT},
+})
+
+const GroupTrainers = sequelize.define('grouptrainers',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    name: {type: DataTypes.TEXT},
+    desc: {type: DataTypes.TEXT},
+    capter: {type: DataTypes.TEXT},
+})
+
+const ProgramTrain = sequelize.define('programtrain',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    name: {type: DataTypes.TEXT},
+    desc: {type: DataTypes.TEXT},
+    room: {type: DataTypes.TEXT},
+    image: {type: DataTypes.TEXT},
+    capter: {type: DataTypes.TEXT},
+})
+const ProgramSlider = sequelize.define('programslider',{
+    id: {type: DataTypes.INTEGER,primaryKey: true,autoIncrement: true},
+    name: {type: DataTypes.TEXT},
+    room: {type: DataTypes.TEXT},
+    image: {type: DataTypes.TEXT},
+    capter: {type: DataTypes.TEXT},
+})
+
 module.exports = {
-    User,Token,Skills,Developers,SkillDeveloper,Documents,News, Sites,AUPs
+    User,Token,Skills,Developers,SkillDeveloper,Documents,News, Sites,AUPs,VakCompanies,Vakansii,About,GroupsComs,Activities,PacksKids,GalleryImages,ContactsPage,
+    ZonesPage,
+    ZonesSlider,
+    MobileApp,
+    Advantages,
+    OurTrainers,
+    ProgramTrain,
+    ProgramSlider,
+    GroupTrainers
 }

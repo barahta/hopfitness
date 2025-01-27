@@ -9,39 +9,35 @@ import ZoneSlider from "../components/zones/ZoneSlider";
 import RoomsBlock from "../components/zones/RoomsBlock";
 import ProgramsSlider from "../components/zones/ProgramsSlider";
 import AboutFitness from "../components/about/AboutFitness";
-
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import NewsBlock from "../components/news/NewsBlock";
 function Main () {
 
+    const location = useLocation();
 
+    useEffect(() => {
+        if (location.state?.scrollTo) {
+            const section = document.getElementById(location.state.scrollTo);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, [location]);
     return (
         <div className={style.bodymain}>
             <NewHeader />
+            <RoomsBlock />
             <ContactStrock />
             <ProductBlock />
-            {/*<AboutFitness />*/}
             <Cosmos />
             <AboutParalax />
-            {/*<ZonesBlock />*/}
             <ZoneSlider />
-            <RoomsBlock />
             <ProgramsSlider />
-            {/*<Carusel />*/}
-            {/*<TwoBlocks />*/}
-            {/*<Group />*/}
-            {/*<NewAbout />*/}
-            {/*<Actives />*/}
-            {/*<NewsBlock />*/}
-            <Footer />
-            {/*<HeaderMain />*/}
-            {/*<div className={style.blockvideo}>*/}
-            {/*    <video autoPlay="autoplay" muted="muted" loop="loop" playsInline="">*/}
-            {/*    <source src="/files/header/intro.mp4" type="video/mp4"/>*/}
-            {/*</video>*/}
+            <NewsBlock />
+            <Footer /><script id="fitnesskit_lesson" data-id="2" data-server="hope" src="https://hope.fitnesskit-admin.ru/widget/mount/widget-lesson.js" async > </script>
 
-            {/*</div>*/}
-            {/*<AboutUs />*/}
-            {/*<Projects />*/}
-            {/*<NewsBlock />*/}
+
 
 
         </div>

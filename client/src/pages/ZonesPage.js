@@ -88,16 +88,16 @@ function ZonesPage (){
                     url: 'wellness1.jpg'
                 },
                 {
-                    desc: 'СПА',
-                    url: 'wellness2.jpg'
-                },
-                {
                     desc: 'Бассейн',
                     url: 'wellness3.jpg'
                 },
                 {
                     desc: 'Зона отдыха',
                     url: 'wellness4.jpg'
+                },
+                {
+                    desc: 'СПА',
+                    url: 'wellness2.jpg'
                 },
                 {
                     desc: 'Бар',
@@ -307,23 +307,55 @@ function ZonesPage (){
                                         </div>
                                         <div className={style.gallary}>
                                             <div className={style.first}>
-                                                <div className={style.mainimg} style={{ backgroundImage: `url('/images/${point.images[0].url}')` }}></div>
+                                                <div className={style.mainimg} style={{ backgroundImage: `url('/images/${point.images[0].url}')` }}>
+                                                    <div className={style.ramka}>
+                                                        <img className={style.arrow} src="/files/openwhite.svg" alt=""/>
+                                                        <div className={style.nameimg}>{point.images[0].desc}</div>
+                                                    </div>
+                                                </div>
                                                 <div className={style.double}>
-                                                    <div className={style.seatimg} style={{ backgroundImage: `url('/images/${point.images[1].url}')` }}></div>
-                                                    <div className={style.seatimg} style={{ backgroundImage: `url('/images/${point.images[2].url}')` }}></div>
+                                                    <div className={style.seatimg} style={{ backgroundImage: `url('/images/${point.images[1].url}')` }}>
+                                                        <div className={style.ramka}>
+                                                            <img className={style.arrow} src="/files/openwhite.svg" alt=""/>
+                                                            <div className={style.nameimg}>{point.images[1].desc}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div className={style.seatimg} style={{ backgroundImage: `url('/images/${point.images[2].url}')` }}>
+                                                        <div className={style.ramka}>
+                                                            <img className={style.arrow} src="/files/openwhite.svg" alt=""/>
+                                                            <div className={style.nameimg}>{point.images[2].desc}</div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div className={style.last}>
-                                                {point.images.slice(3).map((img, indexLastImg) => {
+                                                {point.images.slice(3).map((img, indexLastImg, arr) => {
                                                     const isRowVertical = imageOrientation[index]?.some((isVert) => isVert);
-                                                    const className = isRowVertical ? style.lastimgTall : style.lastimg;
+                                                    let className;
+
+                                                    if (arr.length === 2) {
+                                                        className = isRowVertical ? style.twoImagesTall : style.twoImages;
+                                                    } else if (arr.length === 1) {
+                                                        className = style.singleImage;
+                                                    } else if (arr.length === 4 && indexLastImg === 3) {
+                                                        className = style.fourthImageFullWidth;
+                                                    } else if (arr.length === 5 && indexLastImg >= 3) {
+                                                        className = isRowVertical ? style.twoImagesInRowTall : style.twoImagesInRow;
+                                                    } else {
+                                                        className = isRowVertical ? style.lastimgTall : style.lastimg;
+                                                    }
 
                                                     return (
                                                         <div
                                                             key={indexLastImg}
                                                             className={className}
                                                             style={{ backgroundImage: `url('/images/${img.url}')` }}
-                                                        ></div>
+                                                        >
+                                                            <div className={style.ramka}>
+                                                                <img className={style.arrow} src="/files/openwhite.svg" alt=""/>
+                                                                <div className={style.nameimg}>{img.desc}</div>
+                                                            </div>
+                                                        </div>
                                                     );
                                                 })}
                                             </div>

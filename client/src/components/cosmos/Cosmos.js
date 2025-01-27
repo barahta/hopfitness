@@ -2,39 +2,6 @@ import style from './Cosmos.module.scss'
 import {useState} from "react";
 function Cosmos () {
 
-    const whys = [
-        {
-            title: 'Отличные аниматоры',
-            image: '6.jpg',
-            desc: 'У нас большая команда аниматоров. Профессионалы своего дела, которые сделают ваш праздник незабываемым.'
-        },
-        {
-            title: 'Интересные мастер-классы',
-            image: '1.jpg',
-            desc: 'Более 20 различных мастер-классов. Каждый найдет занятие по душе.'
-        },
-        {
-            title: 'НАМ УЖЕ 3 года',
-            image: '4.jpg',
-            desc: 'Большое количество положительных отзывов подтверждают наш трепетный подход к своему делу!'
-        },
-        {
-            title: 'Игровой лабиринт',
-            image: '2.jpg',
-            desc: 'Многоуровневый игровой лабиринт с горками и тоннелями. '
-        },
-        {
-            title: 'Бассейн с шариками',
-            image: '3.jpg',
-            desc: 'Большой бассейн с шариками. Вашему ребенку точно понравится!'
-        },
-        {
-            title: 'Свой бар',
-            image: '5.jpg',
-            desc: 'Большой выбор разнообразных напитков и десертов для детей. А для родителей у нас есть кофе.'
-        }
-    ]
-
     const [activeblock, setActiveblock] = useState('')
 
     return(
@@ -60,21 +27,21 @@ function Cosmos () {
                             Мы создали удобное приложение, где вы сможете получить всю необходимую информацию о предстоящих мероприятиях и расписании групповых программ, а также записаться на них.
                         </div>
                         <div className={style.btns_application}>
-                            <div className={style.btn_android}>
+                            <a href="https://play.google.com/store/apps/details?id=ru.razomovsky.hopefitness" target="_blank" className={style.btn_android}>
                                 <i className="fa-brands fa-google-play"/>
                                 <div className={style.text}>
                                     GET IT ON
                                     <label>Google Play</label>
                                 </div>
-                            </div>
-                            <div className={style.btn_apple}>
+                            </a>
+                            <a href="https://apps.apple.com/us/app/hope-fitness/id1490861684" target="_blank" className={style.btn_apple}>
                                 <i className="fa-brands fa-apple"/>
 
                                 <div className={style.text}>
                                     Download on the
                                     <label>App Store</label>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div className={style.desc}>
                             В приложении также доступна подробная информация о каждом тренере и стоимости тренировок.

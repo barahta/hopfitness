@@ -1,10 +1,31 @@
 import React, { useRef, useEffect, useState } from 'react';
 import style from './ContactStrockStyle.module.scss';
+import PostResume from "../forms/PostResume";
+import WriteModal from "../modalwin/WriteModal";
+import NewsService from "../../services/NewsService";
 
 function ContactStrock() {
     const containerRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
     const [city, setCity] = useState(localStorage.getItem('city') || 'Сургут');
+
+    const [allCity, setAllCity] = useState([])
+    const [activemodal, setActivemodal] = useState(false);
+    const [data, setData] = useState('');
+
+    const [newphone, setNewPhone] = useState('')
+    const [phones, setPhones] = useState([])
+    const [newadress, setNewAdress] = useState('')
+    const [adresses, setAdresses] = useState([])
+    const [newaemail, setNewEmail] = useState('')
+    const [emails, setEmails] = useState([])
+    const [mapW, setMapW] = useState('')
+    const [mapH, setMapH] = useState('')
+    const [vk, setVK] = useState('')
+    const [ok, setOK] = useState('')
+    const [instagram, setInstagram] = useState('')
+    const [telegram, setTelegram] = useState('')
+    const [youtube, setYoutube] = useState('')
 
     const makeadress = [
         {
@@ -90,8 +111,45 @@ function ContactStrock() {
         };
     }, []);
 
+    const loadContacts = () => {
+        const thisContact = allCity.find(cityObj => cityObj.city === city)
+        if(thisContact){
+            setPhones(thisContact.phone)
+            setAdresses(thisContact.adress)
+            setEmails(thisContact.email)
+            setMapW(thisContact.mapw)
+            setMapH(thisContact.maph)
+            setVK(thisContact.vk)
+            setOK(thisContact.ok)
+            setInstagram(thisContact.instagram)
+            setTelegram(thisContact.telegram)
+            setYoutube(thisContact.youtube)
+        }
+
+    }
+
+    const getCities = async () => {
+        try{
+            const {data} = await NewsService.getCities({capter: 'hopefitness'})
+            console.log(data)
+            setAllCity(data)
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    useEffect(()=>{
+        getCities()
+    }, [activemodal])
+
+    useEffect(()=>{
+        loadContacts()
+    }, [city])
+
     return (
         <div className={style.main}>
+            <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<PostResume man={data} setActivemodal={setActivemodal} />} setData={setData} />
+
             <div
                 className={`${style.container} ${isVisible ? style.fadeIn : ''}`}
                 ref={containerRef}
@@ -134,7 +192,7 @@ function ContactStrock() {
                             </a>
                         ))}
                     </div>
-                    <div className={style.down}>Пробное занятие</div>
+                    <div className={style.down} onClick={()=>setActivemodal(true)}>Пробное занятие</div>
                 </div>
             </div>
         </div>

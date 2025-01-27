@@ -25,6 +25,62 @@ class NewsController {
             next(e)
         }
     }
+    async getZonesSlides(req, res, next) {
+        try {
+            const zone = req.body
+            const itogy = await NewsService.getZonesSlides(zone)
+            return res.status(200).json(itogy)
+        } catch (e) {
+            next(e)
+        }
+    }
+    async getCities(req, res, next) {
+        try {
+            const capter = req.body
+            const itogy = await NewsService.getCities(capter)
+            return res.status(200).json(itogy)
+        } catch (e) {
+            next(e)
+        }
+    }
+    async getAllPacks(req, res, next) {
+        try {
+            const capter = req.body
+            const list = await NewsService.getAllPacks(capter)
+            return res.status(200).json(list)
+        } catch (e) {
+            next(e)
+        }
+    }
+    async getTrenersMan(req, res, next) {
+        try {
+            const group = req.body
+            const itogy = await NewsService.getTrenersMan(group)
+            return res.status(200).json(itogy)
+        } catch (e) {
+            next(e)
+        }
+    }
+    async getTrenersGroup(req, res, next) {
+        try {
+            const group = req.body
+            const itogy = await NewsService.getTrenersGroup(group)
+            return res.status(200).json(itogy)
+        } catch (e) {
+            next(e)
+        }
+    }
+
+    async getGalleryImgs(req, res, next) {
+        try {
+            const capter = req.body
+            const itogy = await NewsService.getGalleryImgs(capter)
+            return res.status(200).json(itogy)
+        } catch (e) {
+            next(e)
+        }
+    }
+
 
 }
 

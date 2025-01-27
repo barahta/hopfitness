@@ -1,20 +1,39 @@
 import style from './RoomsBlock.module.scss';
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import WriteModal from "../modalwin/WriteModal";
+import PostResume from "../forms/PostResume";
+import NewsService from "../../services/NewsService";
 
 function RoomsBlock() {
-    const zones = [
-        { name: 'Тренажерный зал', group: 'Все оборудование для фитнеса поставляется ведущими мировыми брендами - HOIST, Circle Fitness', image: '2231.jpg', size: 'big' },
-        { name: 'World Elite', group: 'Премиальная зона с отдельным залом, раздевалкой и зоной для переговоров', image: '2232.jpg', size: 'big' },
-        { name: 'Wellness', group: 'Два хаммама, финская сауна, соляная комната и просторная зона отдыха с фитнес баром', image: '2233.jpg', size: 'big' },
-        { name: 'Зона единоборств', group: 'Отдельная зона с татами, дополненная грушами и необходимым инвентарем', image: '2234.jpg', size: '' },
-        { name: 'Групповые залы', group: 'Два просторных зала с большим разнообразием тренировок', image: '2235.jpg', size: '' },
-        { name: 'Бассейн', group: 'Две чаши бассейна: с противотоком и гидромассажем', image: '2236.jpg', size: '' },
-        { name: 'Gratz Pilates', group: 'Единственная студия в ХМАО-Югре c уникальным оборудованием "Gratz Industries"', image: '2237.jpg', size: '' }
-    ];
-
     const [thisRoom, setThisRoom] = useState(0);
+    const [list, setList] = useState([]);
     const [fade, setFade] = useState(true);
-    const totalRooms = zones.length;
+    const [totalRooms, setTotalRooms] = useState(0);
+    const [data, setData] = useState('');
+    const [activemodal, setActivemodal] = useState(false);
+
+    const getZonesSlides = async () => {
+        try {
+            const { data } = await NewsService.getZonesSlides({ capter: 'hopefitness' });
+            console.log(data)
+            if (data) {
+                // Сортируем данные по приоритету
+                const sortedData = data.sort((a, b) => parseInt(b.priory, 10) - parseInt(a.priory, 10));
+                // Фильтруем данные, убирая те, у которых нет имени и изображения
+                console.log(sortedData)
+                const filteredData = sortedData.filter(item => item.name && item.image);
+                setList(filteredData);
+                setTotalRooms(filteredData.length);
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
+    useEffect(() => {
+        getZonesSlides();
+    }, []);
 
     // Автоматическая смена слайдов
     useEffect(() => {
@@ -23,7 +42,7 @@ function RoomsBlock() {
         }, 3000);
 
         return () => clearInterval(interval);
-    }, [thisRoom]);
+    }, [thisRoom, totalRooms]);
 
     const handleNext = () => {
         setFade(false); // Запускаем анимацию затухания
@@ -51,26 +70,54 @@ function RoomsBlock() {
 
     return (
         <div className={style.main}>
+            <WriteModal
+                activemodal={activemodal}
+                setActivemodal={setActivemodal}
+                data={<PostResume title={data} setActivemodal={setActivemodal} />}
+                setData={setData}
+            />
+
             <div className={style.container}>
                 <div className={style.title}>
                     <div className={style.text}>Зоны фитнес клуба</div>
                 </div>
                 <div className={style.zones}>
-                    <div className={`${style.room} ${fade ? style.fadeIn : style.fadeOut}`}>
-                        <div className={style.backroom} style={{ backgroundImage: `url('/images/${zones[thisRoom].image}')` }}></div>
-                        <div className={style.descriptions}>
-                            <div className={style.title}>{zones[thisRoom].name}</div>
-                            <div className={style.desc}>{zones[thisRoom].group}</div>
-                            <div className={style.btns}>
-                                <div className={style.more}>ПОДРОБНЕЕ</div>
-                                <div className={style.checked}>ЗАПИСАТЬСЯ</div>
+                    {list.length > 0 && (
+                        <div className={`${style.room} ${fade ? style.fadeIn : style.fadeOut}`}>
+                            <div
+                                className={style.backroom}
+                                style={{
+                                    backgroundImage: `url('${process.env.REACT_APP_API_URL}${list[thisRoom].image}')`,
+                                }}
+                            ></div>
+                            <div className={style.descriptions}>
+                                <div className={style.title}>{list[thisRoom]?.name || 'Название не указано'}</div>
+                                <div className={style.desc}>{list[thisRoom]?.desc || 'Описание отсутствует'}</div>
+                                <div className={style.btns}>
+                                    <Link to='/zones' className={style.morenori} style={{ color: '#FFF' }}>
+                                        ПОДРОБНЕЕ
+                                    </Link>
+                                    <div
+                                        className={style.checked}
+                                        onClick={() => {
+                                            setActivemodal(true);
+                                            setData(`${list[thisRoom]?.name || ''} - Записаться`);
+                                        }}
+                                    >
+                                        ЗАПИСАТЬСЯ
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    )}
+                    <div className={style.prev} onClick={handlePrev}>
+                        <i className="fa-solid fa-angles-left" />
                     </div>
-                    <div className={style.prev} onClick={handlePrev}><i className="fa-solid fa-angles-left" /></div>
-                    <div className={style.next} onClick={handleNext}><i className="fa-solid fa-angles-right" /></div>
+                    <div className={style.next} onClick={handleNext}>
+                        <i className="fa-solid fa-angles-right" />
+                    </div>
                     <div className={style.dots}>
-                        {zones.map((_, index) => (
+                        {list.map((_, index) => (
                             <span
                                 key={index}
                                 className={`${style.dot} ${index === thisRoom ? style.active : ''}`}
@@ -82,7 +129,9 @@ function RoomsBlock() {
             </div>
             <div className={style.more}>
                 <div className={style.moreblock}>
-                    <div className={style.btn}><div className={style.next}></div>Все зоны</div>
+                    <Link to='/zones' className={style.btn}>
+                        <div className={style.next}></div>Все зоны
+                    </Link>
                 </div>
             </div>
         </div>

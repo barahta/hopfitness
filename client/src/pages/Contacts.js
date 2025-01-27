@@ -77,6 +77,17 @@ function Contacts() {
             position: 'Генеральный директор'
         }
     ];
+    const makeadress = {
+            name: 'Сургут',
+            phone: '8(499)290-13-29',
+            adress: 'Республики 65/1',
+            email: 'info@hopefitness.ru',
+            socialys: [
+                { name: 'vk', url: 'https://vk.com/' },
+                { name: 'telegram', url: 'https://vk.com/telegram' },
+                { name: 'whatsapp', url: 'https://vk.com/whatsapp' }
+            ]
+        }
 
     return (
         <div className={style.bodymain}>
@@ -108,15 +119,15 @@ function Contacts() {
                 <div className={style.ontheleft}>
                     <div className={style.container50}>
                         <div className={style.strock}>адрес</div>
-                        <div className={style.strock}>628403, Ханты-Мансийский автономный округ,</div>
-                        <div className={style.strock}>г. Сургут, ул. 30 лет Победы 27/2</div>
+                        <div className={style.strock}>{makeadress.name}</div>
+                        <div className={style.strock}>{makeadress.adress}</div>
                     </div>
                 </div>
                 <div className={style.ontheright}>
                     <div className={style.container50}>
                         <div className={style.strock}>Контакты</div>
-                        <div className={style.strock}>+7 (346) 222-12-11</div>
-                        <div className={style.strock}>mail@gk-omedia.ru</div>
+                        <div className={style.strock}>{makeadress.phone}</div>
+                        <div className={style.strock}>{makeadress.email}</div>
                     </div>
                 </div>
             </div>

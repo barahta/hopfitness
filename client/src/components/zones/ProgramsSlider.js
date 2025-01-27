@@ -1,5 +1,8 @@
 import style from './ProgramsSlider.module.scss';
 import { useState, useRef, useEffect } from "react";
+import {Link} from "react-router-dom";
+import WriteModal from "../modalwin/WriteModal";
+import PostResume from "../forms/PostResume";
 
 function ProgramsSlider() {
     const mans = [
@@ -53,9 +56,13 @@ function ProgramsSlider() {
             }
         };
     }, [currentPosition]);
+    const [activemodal,setActivemodal] = useState(false)
+    const [data,setData] = useState('')
 
     return (
         <div className={style.main}>
+            <WriteModal activemodal={activemodal} setActivemodal={setActivemodal} data={<PostResume man={data} setActivemodal={setActivemodal} title='Записаться на занятие'/>} setData={setData} />
+
             <div className={style.container}>
                 <div className={style.title}>
                     <div className={style.text}>Наши программы</div>
@@ -85,7 +92,7 @@ function ProgramsSlider() {
                                             <div className={style.fio}>{man.name}</div>
                                             <div className={style.age}>{man.group}</div>
                                         </div>
-                                        <div className={style.btn}>Записаться</div>
+                                        <div className={style.btn} onClick={()=>setActivemodal(true)}>Записаться</div>
                                     </div>
                                 </div>
                             ))}
@@ -98,7 +105,13 @@ function ProgramsSlider() {
             </div>
             <div className={style.more}>
                 <div className={style.moreblock}>
-                    <div className={style.btn}><div className={style.next}></div>Все программы</div>
+                    <Link to='/programs' className={style.btn}><div className={style.next}></div>Все программы</Link>
+                </div>
+            </div>
+
+            <div className={style.more}>
+                <div className={style.moreblockras}>
+                    <Link to='/raspisanie' className={style.btns}>Расписание</Link>
                 </div>
             </div>
         </div>

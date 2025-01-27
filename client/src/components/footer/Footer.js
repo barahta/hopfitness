@@ -10,17 +10,17 @@ function Footer (){
                 <div className={style.content}>
                     <div className={style.upper}>
                         <div className={style.column}>
-                            {/*<div className={style.point}>*/}
-                            {/*    <div className={style.next}></div>*/}
-                            {/*    <div className={style.text}>О нас</div>*/}
-                            {/*</div>*/}
-                            <Link to='/activegroup' className={style.point}>
+                            <Link to='/zones' className={style.point}>
                                 <div className={style.next}></div>
-                                <div className={style.text}>Активы группы</div>
+                                <div className={style.text}>Зоны</div>
                             </Link>
-                            <Link to='/allnews'  className={style.point}>
+                            <Link to='/programs' className={style.point}>
                                 <div className={style.next}></div>
-                                <div className={style.text}>Новости</div>
+                                <div className={style.text}>Программы</div>
+                            </Link>
+                            <Link to='/treners'  className={style.point}>
+                                <div className={style.next}></div>
+                                <div className={style.text}>Тренеры</div>
                             </Link>
                         </div>
                         {/*<div className={style.column}>*/}
@@ -34,13 +34,17 @@ function Footer (){
                         {/*    </div>*/}
                         {/*</div>*/}
                         <div className={style.column}>
+                            <Link to='/cards'  className={style.point}>
+                                <div className={style.next}></div>
+                                <div className={style.text}>Клубная карта</div>
+                            </Link>
+                            <Link to='/gallery'  className={style.point}>
+                                <div className={style.next}></div>
+                                <div className={style.text}>Галерея</div>
+                            </Link>
                             <Link to='/contacts'  className={style.point}>
                                 <div className={style.next}></div>
                                 <div className={style.text}>Контакты</div>
-                            </Link>
-                            <Link to='/vakansii'  className={style.point}>
-                                <div className={style.next}></div>
-                                <div className={style.text}>Вакансии</div>
                             </Link>
                         </div>
                     </div>

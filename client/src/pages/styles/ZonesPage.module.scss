@@ -1,299 +1,362 @@
-.bodymain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  text-decoration: none;
-  background-color: #121212;
-
-  .vakansii {
-    width: 100%;
-    height: 100%;
-    min-height: 400px;
+@media screen and (min-width: 550px){
+  .bodymain {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-top: -100px;
+    width: 100%;
+    min-height: 100vh;
+    text-decoration: none;
+    background-color: #121212;
 
-    .container {
+    .vakansii {
       width: 100%;
       height: 100%;
+      min-height: 400px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
-      margin-bottom: 50px;
+      margin-top: -100px;
 
-      .title {
-        width: calc(100% - 60px);
-        padding: 0 30px;
-        max-width: 1920px;
-        font-weight: 600;
-        font-size: 90px;
-        text-transform: uppercase;
-        color: #FFF;
-        margin-bottom: 50px;
-        margin-top: 100px;
-      }
-
-      .block {
+      .container {
         width: 100%;
-        max-width: 1920px;
         height: 100%;
         display: flex;
-        justify-content: space-between;
-        position: relative;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 50px;
 
-        .leftpart {
+        .title {
+          width: calc(100% - 60px);
+          padding: 0 30px;
+          max-width: 1920px;
+          font-weight: 600;
+          font-size: 70px;
+          text-transform: uppercase;
+          color: #FFF;
+          margin-bottom: 50px;
+          margin-top: 150px;
+        }
+
+        .block {
           width: 100%;
-          max-width: 500px;
+          max-width: 1920px;
           height: 100%;
-          border: 1px solid #F5DE1E;
-          position: sticky;
-          top: 0px;
           display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
+          justify-content: space-between;
+          position: relative;
 
-          .navigate {
+          .leftpart {
+            width: 100%;
+            max-width: 500px;
+            height: 100%;
+            border: 1px solid #ffffff;
+            position: sticky;
+            top: 1px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            width: 100%;
-            padding: 20px 0;
 
-            .point {
-              width: calc(100% - 35px);
+            .navigate {
               display: flex;
-              color: #F1F1F1;
-              font-weight: 600;
-              font-size: 20pt;
-              justify-content: space-between;
+              flex-direction: column;
+              justify-content: flex-start;
               align-items: center;
-              margin: 10px 0;
-              cursor: pointer;
-              transition: 0.2s;
-              height: 50px;
+              width: 100%;
+              padding: 20px 0;
 
-              .total {
-                width: 30px;
-                height: 30px;
-                min-width: 30px;
-                min-height: 30px;
-                background-color: #F1F1F1;
-                color: #454545;
+              .point {
+                width: calc(100% - 35px);
                 display: flex;
-                justify-content: center;
+                color: #F1F1F1;
+                font-weight: 600;
+                font-size: 20pt;
+                justify-content: space-between;
                 align-items: center;
-                font-size: 20px;
-                border-radius: 26px;
-                margin-left: 20px;
+                margin: 10px 0;
+                cursor: pointer;
                 transition: 0.2s;
+                height: 50px;
+
+                .total {
+                  width: 30px;
+                  height: 30px;
+                  min-width: 30px;
+                  min-height: 30px;
+                  background-color: #F1F1F1;
+                  color: #454545;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-size: 20px;
+                  border-radius: 26px;
+                  margin-left: 20px;
+                  transition: 0.2s;
+                }
               }
-            }
 
-            .point:hover {
-              transition: 0.2s;
-              font-size: 20pt;
-              width: calc(100% - 35px);
-
-              .total {
-                width: 35px;
-                height: 35px;
-                background-color: #F1F1F1;
-                color: #454545;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 16px;
-                border-radius: 26px;
-                margin-left: 20px;
+              .point:hover {
                 transition: 0.2s;
+                font-size: 20pt;
+                width: calc(100% - 35px);
+
+                .total {
+                  width: 35px;
+                  height: 35px;
+                  background-color: #F1F1F1;
+                  color: #454545;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-size: 16px;
+                  border-radius: 26px;
+                  margin-left: 20px;
+                  transition: 0.2s;
+                }
               }
             }
           }
-        }
 
-        .rightpart {
-          width: calc(100% - 100px);
-          max-width: calc(1920px - 500px);
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          font-family: 'Mont', sans-serif;
-          font-weight: 400;
-          font-optical-sizing: auto;
-          padding: 0 50px;
-
-          .list {
-            width: 100%;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-
-            &.fadeIn {
-              opacity: 1;
-              transform: translateY(0);
-            }
-
-            .position {
-              width: 100%;
-              padding: 0;
-              margin-bottom: 0;
-
-              .title {
-                font-size: 26pt;
-                font-family: 'Mont', sans-serif;
+          .rightpart {
+            width: calc(100% - 100px);
+            max-width: calc(1920px - 500px);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Mont', sans-serif;
+            font-weight: 400;
+            font-optical-sizing: auto;
+            padding: 0 50px;
+            .ramka{
+              width: calc(100% - 30px);
+              height: calc(100% - 30px);
+              border: 1px solid #F1F1F1;
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              transition: 0.3s;
+              .arrow{
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                min-width: 80px;
+                min-height: 80px;
+                top: 12px;
+                right: 14px;
+              }
+              .nameimg{
+                width: 80%;
+                text-align: center;
+                font-size: 18pt;
+                text-transform: uppercase;
+                color: #FFFFFF;
                 font-weight: 600;
-                margin: 0;
-                padding: 0;
-                cursor: pointer;
-                display: flex;
-                justify-content: space-between;
+                opacity: 0;
+                transition: 0.3s;
+              }
+            }
+            .ramka:hover{
+              background-color: rgba(0, 0, 0, 0.6);
+              border: 1px solid rgba(0, 0, 0, 0.6);
+              transition: 0.3s;
+              .nameimg{
+                opacity: 1;
+                transition: 0.3s;
+              }
+            }
+            .list {
+              width: 100%;
+              opacity: 0;
+              transform: translateY(20px);
+              transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 
-                .text {
-                  width: calc(100% - (101px / 4 * 2));
-                }
-
-                .next {
-                  width: calc(101px / 4 * 2);
-                  height: calc(144px / 4 * 2);
-                  background-image: url("../../components/images/next.svg");
-                  background-size: 98%;
-                  background-repeat: no-repeat;
-                  transition: 0.2s ease-in-out;
-                  background-position: center center;
-                  margin: 0 30px 0 0;
-                }
+              &.fadeIn {
+                opacity: 1;
+                transform: translateY(0);
               }
 
-              .title:hover {
-                .text { /* Здесь можно добавить эффекты при наведении на текст */ }
-
-                .next {
-                  margin-right: 10px;
-                }
-              }
-
-              .description {
-                font-size: 16pt;
-                color: #F1F1F1;
-              }
-
-              .gallary {
+              .position {
                 width: 100%;
-                min-height: 400px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-                .first {
-                  width: 100%;
+                padding: 0;
+                margin-bottom: 0;
+                border-top: 1px solid #FFF;
+                padding-top: 20px;
+                .title {
+                  font-size: 26pt;
+                  font-family: 'Mont', sans-serif;
+                  font-weight: 600;
+                  margin: 0;
+                  padding: 0;
+                  cursor: pointer;
                   display: flex;
                   justify-content: space-between;
+                  margin-bottom: 10px;
+                  .text {
+                    width: calc(100% - (101px / 4 * 2));
+                  }
+
+                  .next {
+                    width: calc(101px / 4 * 2);
+                    height: calc(144px / 4 * 2);
+                    background-image: url("../../components/images/next.svg");
+                    background-size: 98%;
+                    background-repeat: no-repeat;
+                    transition: 0.2s ease-in-out;
+                    background-position: center center;
+                    margin: 0 30px 0 0;
+                  }
+                }
+
+                .title:hover {
+                  .text { /* Здесь можно добавить эффекты при наведении на текст */ }
+
+                  .next {
+                    margin-right: 10px;
+                  }
+                }
+
+                .description {
+                  font-size: 16pt;
+                  color: #989898;
+                  padding: 10px;
+                  margin-bottom: 10px;
+                }
+
+                .gallary {
+                  width: 100%;
+                  min-height: 400px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
                   align-items: center;
 
-                  .mainimg {
-                    width: calc(50% - 15px);
-                    height: 700px;
-                    background-position: center center;
-                    background-size: cover;
-                  }
-
-                  .double {
-                    width: calc(50% - 15px);
-                    height: 700px;
+                  .first {
+                    width: 100%;
                     display: flex;
-                    flex-direction: column;
-                    align-items: center;
                     justify-content: space-between;
+                    align-items: center;
 
-                    .seatimg {
-                      width: 100%;
-                      height: calc(50% - 15px);
+                    .mainimg {
+                      width: calc(50% - 15px);
+                      height: 700px;
                       background-position: center center;
                       background-size: cover;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      background-repeat: no-repeat;
+                    }
+
+                    .double {
+                      width: calc(50% - 15px);
+                      height: 700px;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: space-between;
+
+                      .seatimg {
+                        width: 100%;
+                        height: calc(50% - 15px);
+                        background-position: center center;
+                        background-size: cover;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      }
                     }
                   }
-                }
 
-                .last {
-                  width: 100%;
-                  display: flex;
-                  flex-wrap: wrap;
-                  align-items: flex-start;
-                  justify-content: space-between;
-                  margin-top: 30px;
-
-                  .lastimg {
-                    width: calc(100% / 3 - (60px / 3));
-                    height: calc(300px - 15px);
-                    background-position: center center;
-                    background-size: cover;
-                    margin-bottom: 15px;
-                    transition: height 0.3s ease-in-out;
-                  }
-
-                  .lastimgTall {
-                    width: calc(100% / 3 - (60px / 3));
-                    height: calc(600px - 15px); // Увеличенная высота для вертикальных изображений и всех изображений в строке
-                    background-position: center center;
-                    background-size: cover;
-                    margin-bottom: 15px;
-                    transition: height 0.3s ease-in-out;
-                  }
-
-                  .singleImage {
+                  .last {
                     width: 100%;
-                    height: calc(600px - 15px);
-                    background-position: center center;
-                    background-size: cover;
-                    margin-bottom: 15px;
-                  }
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    margin-top: 30px;
 
-                  .twoImages {
-                    width: calc(50% - 15px);
-                    height: calc(300px - 15px);
-                    background-position: center center;
-                    background-size: cover;
-                    margin-bottom: 15px;
-                  }
+                    .lastimg {
+                      width: calc(100% / 3 - 15px);
+                      height: calc(300px - 15px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 15px;
+                      transition: height 0.3s ease-in-out;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
 
-                  .twoImagesTall {
-                    width: calc(50% - 15px);
-                    height: calc(600px - 15px);
-                    background-position: center center;
-                    background-size: cover;
-                    margin-bottom: 15px;
-                  }
+                    .lastimgTall {
+                      width: calc(100% / 3 - 15px);
+                      height: calc(600px - 15px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 15px;
+                      transition: height 0.3s ease-in-out;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
 
-                  .fourthImageFullWidth {
-                    width: 100%;
-                    height: calc(300px - 15px);
-                    background-position: center center;
-                    background-size: cover;
-                    margin-bottom: 15px;
-                  }
+                    .twoImages {
+                      width: calc(50% - 15px);
+                      height: calc(300px - 15px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 15px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
 
-                  .twoImagesInRow {
-                    width: calc(50% - 15px);
-                    height: calc(300px - 15px);
-                    background-position: center center;
-                    background-size: cover;
-                    margin-bottom: 15px;
-                  }
+                    .twoImagesTall {
+                      width: calc(50% - 15px);
+                      height: calc(600px - 15px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 15px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
 
-                  .twoImagesInRowTall {
-                    width: calc(50% - 15px);
-                    height: calc(600px - 15px);
-                    background-position: center center;
-                    background-size: cover;
-                    margin-bottom: 15px;
+                    .singleImage {
+                      width: 100%;
+                      height: calc(600px - 15px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 15px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+
+                    .fourthImageFullWidth {
+                      width: 100%;
+                      height: calc(300px - 15px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 15px;
+                    }
+
+                    .twoImagesInRow {
+                      width: calc(50% - 15px);
+                      height: calc(300px - 15px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 15px;
+                    }
+
+                    .twoImagesInRowTall {
+                      width: calc(50% - 15px);
+                      height: calc(600px - 15px);
+                      background-position: center center;
+                      margin-bottom: 15px;
+                    }
                   }
                 }
               }
@@ -304,3 +367,377 @@
     }
   }
 }
+
+@media screen and (max-width: 550px){
+  .bodymain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    text-decoration: none;
+    background-color: #121212;
+
+    .vakansii {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: -100px;
+
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 100px;
+        .title {
+          width: calc(100% - 60px);
+          padding: 0 30px;
+          max-width: 1920px;
+          font-weight: 600;
+          font-size: 30px;
+          text-transform: uppercase;
+          color: #FFF;
+          margin-bottom: 50px;
+          margin-top: 150px;
+        }
+
+        .block {
+          width: 100%;
+          max-width: 1920px;
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+
+          .leftpart {
+            width: 100%;
+            max-width: 500px;
+            height: 100%;
+            border: 1px solid #ffffff;
+            position: sticky;
+            top: 1px;
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            .navigate {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              align-items: center;
+              width: 100%;
+              padding: 20px 0;
+
+              .point {
+                width: calc(100% - 35px);
+                display: flex;
+                color: #F1F1F1;
+                font-weight: 600;
+                font-size: 20pt;
+                justify-content: space-between;
+                align-items: center;
+                margin: 10px 0;
+                cursor: pointer;
+                transition: 0.2s;
+                height: 50px;
+
+                .total {
+                  width: 30px;
+                  height: 30px;
+                  min-width: 30px;
+                  min-height: 30px;
+                  background-color: #F1F1F1;
+                  color: #454545;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-size: 20px;
+                  border-radius: 26px;
+                  margin-left: 20px;
+                  transition: 0.2s;
+                }
+              }
+
+              .point:hover {
+                transition: 0.2s;
+                font-size: 20pt;
+                width: calc(100% - 35px);
+
+                .total {
+                  width: 35px;
+                  height: 35px;
+                  background-color: #F1F1F1;
+                  color: #454545;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-size: 16px;
+                  border-radius: 26px;
+                  margin-left: 20px;
+                  transition: 0.2s;
+                }
+              }
+            }
+          }
+
+          .rightpart {
+            width: calc(100% - 20px);
+            max-width: calc(1920px - 500px);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Mont', sans-serif;
+            font-weight: 400;
+            font-optical-sizing: auto;
+            padding: 0 10px;
+            .ramka{
+              width: calc(100% - 10px);
+              height: calc(100% - 10px);
+              border: 1px solid #F1F1F1;
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              transition: 0.3s;
+              .arrow{
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                min-width: 80px;
+                min-height: 80px;
+                top: 12px;
+                right: 14px;
+                display: none;
+              }
+              .nameimg{
+                width: 90%;
+                text-align: center;
+                font-size: 9pt;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                font-weight: 600;
+                opacity: 0;
+                transition: 0.3s;
+              }
+            }
+            .ramka:hover{
+              background-color: rgba(0, 0, 0, 0.6);
+              border: 1px solid rgba(0, 0, 0, 0.6);
+              transition: 0.3s;
+              .nameimg{
+                opacity: 1;
+                transition: 0.3s;
+              }
+            }
+            .list {
+              width: 100%;
+              opacity: 0;
+              transform: translateY(20px);
+              transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+
+              &.fadeIn {
+                opacity: 1;
+                transform: translateY(0);
+              }
+
+              .position {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 0;
+                border-top: 1px solid #FFF;
+                padding-top: 20px;
+                .title {
+                  font-size: 26pt;
+                  font-family: 'Mont', sans-serif;
+                  font-weight: 600;
+                  margin: 0;
+                  padding: 0;
+                  cursor: pointer;
+                  display: flex;
+                  width: 100%;
+                  justify-content: center;
+                  text-align: center;
+                  margin-bottom: 5px;
+                  .text {
+                    width: calc(100% - (101px / 4 * 2));
+                  }
+
+                  .next {
+                    width: calc(101px / 4 * 2);
+                    height: calc(144px / 4 * 2);
+                    background-image: url("../../components/images/next.svg");
+                    background-size: 98%;
+                    background-repeat: no-repeat;
+                    transition: 0.2s ease-in-out;
+                    background-position: center center;
+                    margin: 0 30px 0 0;
+                  }
+                }
+
+                .title:hover {
+                  .text { /* Здесь можно добавить эффекты при наведении на текст */ }
+
+                  .next {
+                    margin-right: 10px;
+                  }
+                }
+
+                .description {
+                  font-size: 12pt;
+                  color: #989898;
+                  padding: 10px;
+                  margin-bottom: 10px;
+                }
+
+                .gallary {
+                  width: 100%;
+                  min-height: 200px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  .first {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: -20px;
+
+                    .mainimg {
+                      width: calc(50% - 5px);
+                      height: 150px;
+                      background-position: center center;
+                      background-size: cover;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      background-repeat: no-repeat;
+                    }
+
+                    .double {
+                      width: calc(50% - 5px);
+                      height: 150px;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: space-between;
+
+                      .seatimg {
+                        width: 100%;
+                        height: calc(50% - 5px);
+                        background-position: center center;
+                        background-size: cover;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                      }
+                    }
+                  }
+
+                  .last {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    margin-top: 30px;
+
+                    .lastimg {
+                      width: calc(100% / 3 - 5px);
+                      height: calc(150px - 5px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 5px;
+                      transition: height 0.3s ease-in-out;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+
+                    .lastimgTall {
+                      width: calc(100% / 3 - 5px);
+                      height: calc(250px - 5px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 5px;
+                      transition: height 0.3s ease-in-out;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+
+                    .twoImages {
+                      width: calc(50% - 5px);
+                      height: calc(150px - 5px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 5px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+
+                    .twoImagesTall {
+                      width: calc(50% - 5px);
+                      height: calc(250px - 5px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 5px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+
+                    .singleImage {
+                      width: 100%;
+                      height: calc(300px - 5px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 5px;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+
+                    .fourthImageFullWidth {
+                      width: 100%;
+                      height: calc(150px - 5px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 5px;
+                    }
+
+                    .twoImagesInRow {
+                      width: calc(50% - 5px);
+                      height: calc(300px - 5px);
+                      background-position: center center;
+                      background-size: cover;
+                      margin-bottom: 5px;
+                    }
+
+                    .twoImagesInRowTall {
+                      width: calc(50% - 5px);
+                      height: calc(300px - 5px);
+                      background-position: center center;
+                      margin-bottom: 5px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
